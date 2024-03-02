@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js05</title>
+</head>
+<body>
+
+  <script>
+    var 문자열 = ""
+    var 문자열2 = ''
+    
+    // 이미 만든 '문자열' 공간에 값을 덮어씌우기
+    문자열 = "문자열"
+    문자열2 = "이어붙이기"
+
+    // 문자열의 더하기는 이어붙이기
+    var 합친문자열 = 문자열 + 문자열2
+    console.log(합친문자열)
+
+    var 이름 = "홍길동"
+    var 소개 = "내 이름은 " + 이름 + "입니다."
+    console.log(소개)
+
+    // 문자열의 글자수(변수 안에 문자열이 몇글자인지 알고 싶을 때)
+    var 글자수 = 소개.length
+    console.log("글자수: "+ 글자수)
+
+    var 숫자 = 4
+    숫자 = 숫자       // 4를 숫자에 넣어라
+    숫자 = 숫자 + 1   // 5를 숫자에 넣어라
+    숫자++            // 숫자 안에 들어있는 값을 1 증가하라
+    숫자--            // 숫자 안에 들어있는 값을 1 감소하라
+    console.log(숫자)
+
+    숫자 = 4
+    숫자 = 숫자 + 3   // 숫자 안에 담긴 값에 3 더하고 저장 (= 7)
+    숫자 += 3         // 위와 같은 뜻
+    
+    숫자 -= 3
+    숫자 *= 3
+    숫자 /= 3
+    숫자 %= 3
+
+</script>
+</body>
+</html>

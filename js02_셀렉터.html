@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js02</title>
+  <style>
+    .show-box{
+      background: yellowgreen;
+      padding: 20px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="show-box" id="my-box">
+    <p>버튼을 누르면 알림창을 띄우는 웹페이지</p>
+    <button id="close-btn">닫기</button>
+  </div>
+  <button onclick="document.getElementById('my-box').style.display = 'block'">열기</button>
+  <script>
+    document.getElementById("close-btn").addEventListener('click', function()
+    {
+      //클릭에 대한 이벤트 추가
+      document.getElementById('my-box').style.display = 'none'
+    })
+  </script>
+</body>
+</html>

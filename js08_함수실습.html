@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js08</title>
+  <style>
+    .show-box{
+      background: skyblue;
+      padding: 15px;
+      border-radius: 10px;
+      color: white;
+      display: none;
+    }
+  
+  </style>
+</head>
+<body>
+  <div class="show-box" id="my-box">
+    <p>버튼을 누르면 열리는 창</p>
+    <button onclick="닫기()">닫기</button>
+  </div>
+  <button onclick="열기()">열기</button>
+  
+  <script>
+    function 닫기(){
+      //HTML문서에서 id가 my-box인 것을 찾아 style을 display를 'none'으로 대입
+      document.getElementById('my-box').style.display = 'none'
+    }
+    function 열기(){
+      //HTML문서에서 id가 my-box인 것을 찾아 style을 display를 'block'으로 대입
+      document.getElementById('my-box').style.display = 'block'
+    }
+  </script>
+</body>
+</html>
