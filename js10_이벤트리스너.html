@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js09</title>
+  <style>
+    .boxClass{
+      background: yellowgreen;
+      padding: 15px;
+      border-radius: 5px;
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="boxClass" id="boxId">
+    <p id="box-text">버튼을 누르면 창이 열립니다.</p>
+    <button onclick="상자닫기()">닫기</button>
+  </div>
+  <button onclick="상자열기('아이디를 입력하세요')">열기</button>
+  <button onclick="상자열기('비밀번호를 입력하세요')">열기2</button>
+
+  <script>
+
+    function 상자열기(매개변수){
+      document.getElementById('box-text').innerHTML = 매개변수
+      document.getElementById('boxId').style.display = 'block'
+    }
+
+    function 상자닫기(){
+      document.getElementById('boxId').style.display = 'none'
+    }
+
+    // box-id를 클릭하면 글자색을 붉은색으로
+    // HTML문서에서 (아이디가)box-id인 것을 클릭
+    // 그때 함수 동작
+    // 콜백 함수: 매개변수로 쓰이는 함수
+    document.getElementById('boxId').addEventListener('click', function(){
+      document.getElementById('box-text').style.color = 'white';
+      document.getElementById('box-text').style.fontSize = '30px';
+    })
+
+
+    // 박스에다가 마우스를 올리면 배경을 좀더 진하게
+    document.getElementById('boxId').addEventListener('mouseover',function(){
+      document.getElementById('boxId').style.background = 'green'
+    })
+
+    // 나가면 원래 색으로
+    document.getElementById('boxId').addEventListener('mouseleave',function(){
+      document.getElementById('boxId').style.background = 'yellowgreen'
+    })
+
+
+  </script>
+</body>
+</html>

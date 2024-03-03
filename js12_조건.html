@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      margin: 0;
+    }
+
+    .top-nav{
+      width: 100%;
+      background-color: lightgray;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #logo{
+      margin-left: 30px;
+    }
+
+    .top-nav li{
+      padding-right: 15px;
+      display: inline-block;
+      font-size: 13px;
+    }
+
+    .section-one{
+      width: 100%;
+      background-color: black;
+      color: white;
+      display: flex;
+      height: 0;
+      visibility: hidden;
+      z-index: 5;
+    }
+
+    .section-one h3{
+      margin: 0;
+      padding-top: 10px;
+    }
+
+    .section-one li{
+      list-style: none;
+    }
+
+    .section-one ul{
+      padding-left: 0;
+      padding-right: 50px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="top-nav">
+    <h2 id="logo">로고</h2>
+    <ul>
+      <li>커피</li>
+      <li>라떼</li>
+      <li>주스</li>
+      <li>티</li>
+    </ul>
+  </div>
+  <div class="section-one" id="down-nav">
+    <div>
+      <h3>커피</h3>
+      <ul>
+        <li>아메리카노</li>
+        <li>콜드브루</li>
+      </ul>
+    </div>
+    <div>
+      <h3>라떼</h3>
+      <ul>
+        <li>카페라떼</li>
+        <li>콜드브루라떼</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    var down_nav_flag = 0
+    document.getElementById('logo').addEventListener('click', function(){
+      if(down_nav_flag === 0){
+        document.getElementById('down-nav').style.height = 'auto'
+        document.getElementById('down-nav').style.visibility = 'visible'
+        down_nav_flag = 1
+      }else if(down_nav_flag === 1){
+        document.getElementById('down-nav').style.height = '0'
+        document.getElementById('down-nav').style.visibility = 'hidden'
+        down_nav_flag = 0
+      }
+    })
+  </script>
+</body>
+</html>
