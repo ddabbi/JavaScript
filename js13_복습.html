@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자바스크립트 복습</title>
+</head>
+<body>
+
+  <script>
+    // 변수, 함수, 조건문
+
+    // 변수: 값을 저장하는 공간
+    // 공간을 처음 만들때만 var/let/const 라고 붙여줌
+    // 기존에 만든 공간(변수)를 재활용할때는 var/let/const 생략
+    // 변수(공간)을 사용하는 이유: 자주 사용할 값을 저장해놓기 위해
+
+    // 함수: 코드를 저장하는 공간
+    // 공간을 처음 만들때만 function이라고 붙여줌
+    // 기존에 만든 함수(코드더미)를 재활용할때는 function을 생략. 바로 함수이름 호출
+    // 함수를 사용하는 이유: 코드를 재활용하기 위해서
+    // ()안에는 재활용할때마다 바꿔주고 싶은 값을 넣어주는 공간(매개변수)
+    function 같은지비교하기(숫자1, 숫자2){
+      //들어온 숫자1과 숫자2가 같은지 비교한다음 다르면false, 같으면 true
+      // 조건문은 상황에 따라 다른 코드를 실행하는 용도
+      if(숫자1 == 숫자2){
+        return true
+      }else{
+        return false
+      }
+    }
+    // 함수를 재활용할때는 이름적고()를 적는다.
+    var 함수결과 = 같은지비교하기(3, 4)
+    console.log(함수결과)
+
+
+    function 작은값을찾는기능(숫자1, 숫자2){
+      if(숫자1 < 숫자2){
+        return 숫자1
+      }else{
+        return 숫자2
+      }
+    }
+    var 함수결과2 = 작은값을찾는기능(4, 9)
+    console.log(함수결과2)
+
+    // 놀이기구 탑승 조건 검사
+    // 130cm미만 >> 탑승 불가
+    // 130 ~ 190 >> 탑승 가능
+    // 190cm 초과 >> 탑승 불가
+    function 놀이기구탑승조건검사기능(키){
+      if(130 > 키){
+        return "탑승불가"
+      }else if(130 < 키 && 키 < 190){
+        return "탑승가능"
+      }else if(190 < 키){
+        return "탑승불가"
+      }
+    }
+    var 함수결과3 = 놀이기구탑승조건검사기능(150)
+    console.log(함수결과3)
+
+  </script>
+</body>
+</html>

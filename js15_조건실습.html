@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조건 실습2</title>
+  <style>
+    body{
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .first-box{
+      background: lightgray;
+      border: 1px solid;
+    }
+
+    .top-nav{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .top-nav button{
+      background: black;
+      color: white;
+      padding: 7px;      
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="first-box">
+    <div class="top-nav back-white">
+      <h3>JavaScript</h3>
+      <button id="btn" onclick="change()">다크 모드</button>
+    </div>
+    <div class="botton-nav back-white">
+      <h5>올해 연도는?</h5>
+      <form>
+        <input type="text" id="submit-text">
+        <input type="button" value="제출" id="submit-btn">
+      </form>
+    </div>
+  </div>
+
+  <script>
+    
+
+
+    var state = false
+    function change(){
+      if(state == false){
+        document.querySelector('.first-box').style.background = 'black';
+        document.querySelector('.first-box').style.color = 'white';
+        document.getElementById('btn').style.background = 'white';
+        document.getElementById('btn').style.color = 'black';
+        state = true
+      }else if(state == true){
+        document.querySelector('.first-box').style.background = 'lightgray';
+        document.querySelector('.first-box').style.color = 'black';
+        document.getElementById('btn').style.background = 'black';
+        document.getElementById('btn').style.color = 'white';
+        state = false
+      }  
+    }
+
+    document.getElementById('submit-btn').addEventListener('click', function(){
+      /* let은{}안에서 일반적으로 사용(for문에서 var가 버그가 있음) */
+      var 입력값 = document.getElementById('submit-text').value
+      if(입력값 === "2024"){
+        alert("정답입니다")
+      }else{
+        alert("오답입니다")
+      }
+    })
+  </script>
+</body>
+</html>

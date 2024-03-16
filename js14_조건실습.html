@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조건 실습</title>
+  <style>
+    body{
+      margin: 0;
+    }
+
+    .my-box{
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: lightgray;
+    }
+    .my-box li{
+      display: inline-block;
+      padding-right: 30px;
+    }
+
+    .second-box{
+      width: 100%;
+      background-color: black;
+      color: white;
+      display: none;        
+      z-index: 5;
+      position:fixed;
+    }
+    .second-box li{
+      list-style: none;
+      
+    }
+    .second-box ul{
+      padding-left: 30px;
+    
+    }
+    .second-box h3{
+      padding-left: 30px;
+    
+    }
+
+    .back-black{
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      position: fixed;  /*전체 화면 기준으로 동작*/
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
+      /* height : 100% 
+      opacity : 80% 
+      visibility: collapse*/
+
+      transition: all 0.5s;  /* 모든상태변화 시간소요 */
+
+    }
+
+    .back-white{
+      background: white;
+      width: 400px;
+      height: 400px;
+      padding: 30px;
+    }
+
+    .back-white input[type="text"],
+    .back-white input[type="password"]{
+      width:100%;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="my-box">
+    <h3 id="top-logo">로고</h3>
+    <ul id="top-show-down">
+      <li>Coffee</li>
+      <li>Latte</li>
+      <li>etc</li>
+    </ul>
+  </div>
+  <div class="second-box">
+    <div>
+      <h3>coffee</h3>
+      <ul>
+        <li>아메리카노</li>
+        <li>콜드브루</li>
+        <li>...</li>
+      </ul>
+    </div>
+    <div>
+      <h3>latte</h3>
+      <ul>
+        <li>카페라떼</li>
+        <li>콜드브루라떼</li>
+        <li>...</li>
+      </ul>
+    </div>
+  </div>
+  <button onclick="doModal()">새로운창열기</button>
+  <div class="back-black">
+    <div class="back-white">
+      <h4>제목</h4>
+      <form>
+        <input type="text" placeholder="아이디를 입력하세요">
+        <input type="password" placeholder="비밀번호를 입력하세요">
+        <input type="submit" value="로그인">
+        <input type="button" value=" 닫기" onclick="closeModal()">
+      </form>
+    </div>
+  </div>
+
+
+  <script>
+    var 상태체크 = false
+    document.getElementById('top-logo').addEventListener('click', function(){
+      // 콜백함수: 매개변수로 재활용되는 함수
+    
+      if(상태체크 == false){
+        document.querySelector('.second-box').style.display = 'flex'
+        상태체크 = true
+      }else if(상태체크 == true){
+        document.querySelector('.second-box').style.display = 'none'
+        상태체크 = false
+      }
+    })
+
+    // HTML에서 top-show-down라는 아이디를 찾아 마우스 오버 이벤트를 줘라
+    document.getElementById('top-show-down').addEventListener('mouseover', function(){
+      document.querySelector('.second-box').style.display = 'flex'
+      상태체크 = true
+    })
+    
+    document.getElementById('top-show-down').addEventListener('mouseout', function(){
+      document.querySelector('.second-box').style.display = 'none'
+      상태체크 = false
+    })
+
+    function doModal(){
+    document.querySelector('.back-black').style.visibility = 'visible'
+    document.querySelector('.back-black').style.height = '100%'
+    document.querySelector('.back-black').style.opacity = '100%'
+    }
+
+    function closeModal(){
+      document.querySelector('.back-black').style.visibility = 'hidden'
+      document.querySelector('.back-black').style.height = '0'
+      document.querySelector('.back-black').style.opacity = '0'
+    }
+
+  </script>
+</body>
+</html>
