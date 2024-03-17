@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>타이머</title>
+  
+</head>
+<body>
+  <div class="bye">
+    3초후에 사라집니다
+  </div>
+
+  <div class="timer"></div>
+
+  <script>
+    //setTimeout(콜백함수,ms) : 해당ms 후에 함수르 실행
+    setTimeout(function(){
+      document.querySelector('.bye').style.display = 'none'
+    }, 3000)
+
+    //setInterval(콜백함수,ms) : 해당 ms마다 함수 실행
+    // 시간을 누적(누적해서 보관할 장소 필요) === 변수
+    var 초 = 0
+    var 타이머보관소
+    타이머보관소 = setInterval(function(){
+      초 += 1
+      document.querySelector('.timer').innerHTML = 초
+    }, 1000)
+
+  </script>
+</body>
+</html>

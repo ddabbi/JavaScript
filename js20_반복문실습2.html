@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>슬라이더</title>
+  <style>
+    body{
+      margin: 0;
+    }
+
+    .slider-container{
+      overflow: hidden;
+      width: 50%;
+    }
+
+    .slider-img{
+      display: flex;
+      /*크기 = 슬라이드 갯수 * 100% */
+      width: 300%;
+      transition: all 1s;
+    }
+
+    .box{
+      width: 100%;
+    }
+
+    .box img{
+      width: 100%;
+    }
+
+    .slider-page-1{
+      margin-left: 0;
+
+    }
+    .slider-page-2{
+      margin-left: -100%;
+    }
+    .slider-page-3{
+      margin-left: -200%;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider-container">
+    <div class="slider-img">
+      <div class="box">
+        <img src="/img/img1.jpg" alt="">
+      </div>
+
+      <div class="box">
+        <img src="/img/img2.jpg" alt="">
+      </div>
+
+      <div class="box">
+        <img src="img/img3.jpg" alt="">
+      </div>
+    </div>
+  </div>
+  <button id="slider-btn-1">1</button>
+  <button id="slider-btn-2">2</button>
+  <button id="slider-btn-3">3</button>
+
+
+
+  <script>
+    for(let i = 1; i<=3; i++){
+      document.getElementById('slider-btn-${i}').addEventListener('click',function(){
+        document.querySelector('.slider-img').classList.remove('slider-page-1', 'slider-page-2', 'slider-page=3')
+        document.querySelector('.slider-img').classList.add('slider-page-${i}')
+      })
+    }
+    /*
+    document.getElementById('slider-btn-1').addEventListener('click',function(){
+      //slider-img에다가 slider-first클래스ㅌ를 추가
+      document.querySelector('.slider-img').classList.remove('slider-page-1', 'slider-page-2', 'slider-page=3')
+      document.querySelector('.slider-img').classList.add('slider-page-1')
+    })
+ 
+    document.getElementById('slider-btn-2').addEventListener('click',function(){
+      document.querySelector('.slider-img').classList.remove('slider-page-1', 'slider-page-2', 'slider-page=3')
+      document.querySelector('.slider-img').classList.add('slider-page-2')
+    })
+
+    document.getElementById('slider-btn-3').addEventListener('click',function(){
+      document.querySelector('.slider-img').classList.remove('slider-page-1', 'slider-page-2', 'slider-page=3')
+      document.querySelector('.slider-img').classList.add('slider-page-3')
+    }) */
+  </script>
+</body>
+</html>

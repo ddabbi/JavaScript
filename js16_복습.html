@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+    /*
+    HTML: 문서
+    CSS : style 보관함
+    JAVASCRIPT: 프로그래밍 언어(HTML을 조작하기 위한 언어)
+
+    변수 : 값을 저장하는 공간
+    var, let, const    
+    */
+    var 공간
+    공간 = 3.14   // 값담기. 이미 만든 공간은 var/let/const 키워드 없이 재사용
+
+    //var 공간      // error: 한번 var로 만든 공간은 다시 만들 수 없음
+
+    /*
+    함수 : 코드를 저장하는 공간
+    function으로 생성
+    () > 매개변수(재활용할때 바꿔주고 싶은 값)
+    {} > 저장할 코드
+    한번 만든 함수는 function 키워드 없이 재활용(중복이름으로 생성불가)
+    재활용할때는 이름()
+    */
+    function 함수이름(){}
+    함수이름()
+
+    // 함수가 끝날 떄 결과를 알려주고 싶다 : return
+    // return 값은 변수로 담아서 사용
+    function 리턴있음(){
+      return true     // 함수 끝날때 true라고 사용한 곳에 알려줌
+      console.log('죽은코드') // 도달X
+    }
+    //return이 있는 함수는 변수로 받거나 변수처럼 사용
+    console.log(리턴있음())
+
+    var 함수결과 = 리턴있음()
+    console.log(함수결과)
+
+    /*
+    변수의 타입(자료형) : 정수, 실수, 문자열, 불린, 배열, 객체
+    정수 : 소수점없는 숫자
+    var 변수1 = 1
+
+    실수 : 소수점있는 숫자
+    var 변수2 = 2.0
+    
+    문자열 : 글자('' 또는 ""로 감싸줘야함)
+    var 변수3 = '글자'
+    var 변수4 = "123"         // 사칙연산X, +로 이어붙이기 가능
+    
+    불린 : true false. 조건문에서 주로 사용
+    var 변수5 = true
+
+    배열 : 비슷한 형태의 변수를 여러개를 세트로 관리하고 싶을때 []
+    */
+
+  </script>
+</body>
+</html>
