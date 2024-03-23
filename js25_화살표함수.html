@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>화살표함수</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  <button id="temp">버튼</button>
+
+  <script>
+    // 이름이 없는 함수: 즉시 사용
+    var 변수 = function(){}
+    //document.getElementById('').addEventListener('click', function(){})
+
+    var 변수2 = () => {}     // ArrowFunction
+    var 변수3 = e=>{}        //매개변수1개면() 생략가능
+    var 변수4 = (a,b) =>{}
+    var 변수5 = (a,b) => a + b  // return a + b
+
+    // document.getElementById('temp').addEventListener('click', () => {
+    //   alert('temp')
+    // })
+
+    // document.getElementById('temp').addEventListener('click', function(매개변수){
+    //   console.log(매개변수.target)
+    // })
+    document.getElementById('temp').addEventListener('click', 매개변수=>console.log(매개변수.target))
+
+
+  </script>
+</body>
+</html>

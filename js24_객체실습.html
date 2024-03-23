@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .product-container{
+      display: flex;
+      width: 600px;
+      flex-wrap: wrap;
+    }
+
+    .product{
+      border: 1px solid black;
+      width: 33%;
+    }
+
+    .product-content{
+      padding: 15px;
+    }
+
+    .product img{
+      width: 200px;
+      height: 200px;
+      display:block;
+      background: lightgray;
+    }
+
+    .product button{
+      padding: 10px 25px;
+      background: lightseagreen;
+      border:none;
+      border-radius: 5px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="product-container">
+    <div class="product">
+      <img src="#" alt="...">
+      <div class="product-content">
+        <h3>상품명</h3>
+        <p>가격: 0000 원</p>
+        <button>결재하기</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="#" alt="...">
+      <div class="product-content">
+        <h3>상품명</h3>
+        <p>가격: 0000 원</p>
+        <button>결재하기</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="#" alt="...">
+      <div class="product-content">
+        <h3>상품명</h3>
+        <p>가격: 0000 원</p>
+        <button>결재하기</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="#" alt="...">
+      <div class="product-content">
+        <h3>상품명</h3>
+        <p>가격: 0000 원</p>
+        <button>결재하기</button>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    var 상품정보 = [
+      {'상품명' : '아메리카노', '가격' : 3000},
+      {'상품명' : '카페라떼', '가격' : 4500},
+      {'상품명' : '주스', '가격' : 4000}
+    ]
+
+    var 상품갯수 = document.querySelectorAll('.product').length
+    for (let i = 0; i < 상품갯수; i++) {
+      document.querySelectorAll('.product-content h3')[i].innerHTML = 상품정보[i]['상품명']
+      document.querySelectorAll('.product-content p')[i].innerHTML = '가격: ' + 상품정보[i]['가격'] + ' 원'
+            
+    }
+
+  </script>
+</body>
+</html>

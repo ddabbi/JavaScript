@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>스크롤 이벤트</title>
+  <style>
+    body{
+      margin: 0;
+      background: gray;
+    }
+
+    .container-nav{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 30px;
+      background-color: lightgrey;
+      z-index: 15;          /* 포지션 변경 필요 */
+      position:fixed;      /* 내화면을 따라다녀라 */
+      width: 100%;         /* 붕떠서 div가 떨어져나가고 li만 남음 >> 100%적용 */
+      height: 80px;
+    }
+
+    .container-nav li{
+      display: inline-block;
+      padding: 0px 15px;
+    }
+
+    .container-nav a, a:hover, a:visited, a:active, a:link{
+      color: black;
+      text-decoration: none;
+    }
+
+    .container-content{
+      height: 800px;
+      border: 2px solid black;
+    }
+
+    .ads{
+
+    }
+
+    .sticky-box{
+      width: 50px;
+      height: 50px;
+      background-color: cadetblue;
+      position: sticky;
+      top: 100px;
+      left: 70%;
+      z-index: 10;
+    }
+
+
+  </style>
+</head>
+<body>
+  <!-- 내 스크롤을 따라다니는 상단 네비게이션바 -->
+  <div class="container-nav">
+    <h3>로고</h3>
+    <ul>
+      <li><a href="#">홈</a></li>
+      <li><a href="#">소개</a></li>
+    </ul>
+  </div>
+  <div style="height:80px"></div>
+
+  <!-- 내 스크롤을 따라다니는 박스 -->
+  <div class="container-content">
+    <div class="sticky-box">스티커</div>
+  </div>
+
+  <div class="container-content">
+    <div class="sticky-box">스티커</div>
+  </div>
+
+  <div class="container-content">
+    <div class="sticky-box">스티커</div>
+  </div>
+
+  <script>
+    var 스크롤위치 = 0
+    window.addEventListener('scroll', function(){
+      스크롤위치 = window.scrollY
+      console.log(스크롤위치)
+      // 스크롤이 200 밑으로 내려가면 fontSize를 12px로
+      if(스크롤위치> 200){
+        document.querySelector('.container-nav h3').style.fontSize = '24px'
+      }else{
+        document.querySelector('.container-nav h3').style.fontSize = '16px'
+      }
+      // 200위로 올라가면 원상복구
+    })
+   
+  </script>
+</body>
+</html>
