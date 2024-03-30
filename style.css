@@ -1,0 +1,221 @@
+@font-face {
+  font-family: '나눔';
+  src: url(./NanumSquareR.woff2);
+}
+
+body{
+  font-family: '나눔';
+  margin: 0;
+  background: black;
+}
+
+div, input, textarea{
+  box-sizing: border-box;
+}
+/* nav */
+.top-nav{
+  background: rgb(246, 245, 239);
+}
+
+.top-nav-inner{
+  width: 1100px;
+  height: 120px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.first-nav li{
+  display: inline-block;
+  border-right: 1px solid lightgray;
+  padding: 0px 15px;
+}
+
+.no-border{
+  border-right: none !important;
+}
+
+.dump{
+  height: 120px;
+}
+
+.ads{
+  position: fixed;
+  background-image: url(./img/Mn0ecH_20220711153123340.png);
+  z-index: 5;
+  top: 30%;
+  left: 85%;
+  width: 140px;
+  height: 96px;
+}
+
+.first-nav a, a:link, a:visited a:focus{
+  text-decoration: none;
+  color: black;
+  font-size: small;
+}
+
+.first-nav a:hover{
+  text-decoration: underline;
+}
+
+.first-nav{
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.second-nav{
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.second-nav li{
+  display: inline-block;
+  
+}
+
+.second-nav a, a:link, a:visited a:focus{
+  text-decoration: none;
+  color: black;
+  padding: 10px 15px 25px 15px;  /* 위에서부터 시계방향으로 적용*/
+}
+
+.second-nav a:hover{
+  text-decoration: underline;
+  color: #669900;
+  background: rgb(44, 42, 41);
+}
+
+.down-nav{
+  background: rgb(44, 42, 41);
+  width: 100%;
+  height: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.down-nav-inner{
+  width: 1100px;
+  margin: auto;
+  color: white;
+  display: flex;
+  padding: 15px;
+}
+
+.down-nav-inner div{
+  width: 200px;
+}
+
+.down-nav ul{
+  margin: 0;
+  padding: 0;
+}
+
+.down-nav li{
+  list-style-type: none;
+  font-size: small;
+  color: gray;
+}
+
+nav{
+  position: fixed;
+  width: 100%;
+  z-index: 8;
+}
+
+.section-1{
+  width: 100%;
+  height: 32vw;
+  background-image: url(./img/backImg.PNG);
+  background-position: center;
+  background-size: 100% auto;   /*가로는 100%, 세로는 알아서*/
+  position: relative;
+}
+
+.second-1 .img-text{
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  width: 20vw;
+  height: auto;
+}
+
+.second-1 .product1{
+  position: absolute;
+  left: 45%;
+  top:15%;
+  width:22vw;
+}
+
+.second-1 .product2{
+  position: absolute;
+  left: 65%;
+  top:15%;
+  width:22vw;
+}
+
+.second-1 .product3{
+  position: absolute;
+  left: 78%;
+  top:15%;
+  width:22vw;
+}
+
+.second-1 .second-1-btn{
+  position: absolute;
+  left:45%;
+  top:25%;
+  width:22vw;
+  background: transparent;
+  border: 2px solid green;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+.section-4{
+  width: 100%;
+  height: 22vw;
+  background-image: url(./img/section-2.PNG);
+  background-position: center;
+  background-size: 100% auto;   /*가로는 100%, 세로는 알아서*/
+  background-repeat: no-repeat;
+}
+
+.section-5{
+  width: 100%;
+  height: 22vw;
+  background-image: url(./img/section-3.PNG);
+  background-position: center;
+  background-size: 100% auto;   /*가로는 100%, 세로는 알아서*/
+  background-repeat: no-repeat;
+}
+
+.section-6{
+  width: 100%;
+  height: 32vw;
+  background-image: url(./img/backImg.PNG);
+  background-position: center;
+  background-size: 100% auto;   /*가로는 100%, 세로는 알아서*/
+  background-repeat: no-repeat;
+}
+
+.section-7{
+  width: 100%;
+  height: 32vw;
+  background-image: url(./img/backImg.PNG);
+  background-position: center;
+  background-size: 100% auto;   /*가로는 100%, 세로는 알아서*/
+  background-repeat: no-repeat;
+}
+
+.section-8{
+  width: 100%;
+  height: 32vw;
+  background-image: url(./img/backImg.PNG);
+  background-position: center;
+  background-size: 100% auto;   /*가로는 100%, 세로는 알아서*/
+  background-repeat: no-repeat;
+}
