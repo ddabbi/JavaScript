@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div style="height:300px;">
+    <button id="아이디">나를 눌러!</button>
+  </div>
+
+  <script>
+    /* this: this라는 키워드가 적힌 위치*/
+    console.log(this)
+    
+    window.addEventListener('scroll',function(){
+      console.log(window.scrollY);
+    })
+
+    //id가 '아이디'인 버튼에 클릭이벤트
+    document.getElementById('아이디').addEventListener('click', function(e){
+      console.log(this)   // this라는 코드가 적힌 곳의 위치를 알려줌
+      this.innerHTML = '눌럿넹'
+    })
+
+
+
+    var 오브젝트 = {
+      'a' : 1,
+      'b' : 2,
+      'c' : this,
+      'd' : {
+        '가' : 1,
+        '나' : function(){
+          console.log(this)
+        }
+      }
+    }
+
+    console.log(오브젝트['d']['나'])
+    console.log(오브젝트.c())
+
+    //화살표함수
+    //functino(){} : 실행하는 코드를 기준으로 this범위 체크
+    //() => {} : 감싸고 있는 컨텍스트를 기준으로 this범위를 체크(window, body)
+  </script>
+</body>
+</html>

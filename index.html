@@ -25,13 +25,13 @@
           </div>
           <div class="second-nav">
             <ul>
-              <li><a href="#">COFFEE</a></li>
-              <li><a href="#">MENU</a></li>
-              <li><a href="#">STORE</a></li>
-              <li><a href="#">RESPONSIBILITY</a></li>
-              <li><a href="#">STARBUCKS REWARDS</a></li>
-              <li><a href="#">CORPORATE SALES</a></li>
-              <li><a href="#">WHAT'S NEW</a></li>
+              <li class="down-show"><a href="#">COFFEE</a></li>
+              <li class="down-show"><a href="#">MENU</a></li>
+              <li class="down-show"><a href="#">STORE</a></li>
+              <li class="down-show"><a href="#">RESPONSIBILITY</a></li>
+              <li class="down-show"><a href="#">STARBUCKS REWARDS</a></li>
+              <li class="down-show"><a href="#">CORPORATE SALES</a></li>
+              <li class="down-show"><a href="#">WHAT'S NEW</a></li>
             </ul>
           </div>
         </div>
@@ -80,7 +80,21 @@
     <img src="./img/2024_4_dreamy_top_drink3_m.png" class="product3">  
   </div>
 
-  <div class="section-2"></div>
+  <div class="section-2">
+    <div class="back-black">
+      <h3>공지사항</h3>
+      <ul>
+        <li>개인정보처리방침</li>
+        <li class="display-none">이용약관</li>
+        <li class="display-none">정검안내</li>
+      </ul>
+      <p>+</p>
+    </div>
+    <div class="back-white">
+      <p>스타벅스 프로모션</p>
+      <div class="back-white-icon">
+    </div>
+  </div>
 
   <div class="section-3"></div>
 
@@ -95,6 +109,42 @@
   <div class="section-8"></div>
 
   <footer></footer>
+
+  <script>
+    let a_flag = [false,false,false,false,false,false,false]
+    let down_flag = false;
+
+    document.querySelectorAll('.down-show')[0].addEventListener('mouseenter',(e) => {
+      a_flag[0] = true;
+    })
+
+    document.querySelectorAll('.down-show')[0].addEventListener('mouseleave', (e) =>{
+      down_flag = true;
+      a_flag[0] = false;
+
+    })
+
+    document.querySelectorAll('.down-show')[0].addEventListener('mouseover', (e) =>{
+      a_flag[0] = false;
+    
+    })    
+
+    document.querySelector('.down-nav').addEventListener('mouseleave', (e) =>{
+      down_flag = false;
+    })
+
+    setInterval(function(){
+      if(a_flag[0] == false && down_flag == false){
+        document.querySelector('.down-nav').classList.remove('down-nav-show')
+        document.querySelectorAll('.second-nav a')[0].classList.remove('second-nav-show')
+      }else{
+        document.querySelector('down-nav').classList.add('down-nav-show')
+      }
+    })
+
+
+
+  </script>
 
 </body>
 </html>

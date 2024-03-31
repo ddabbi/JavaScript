@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    // spread operator : 분할 기능(배열과 오브젝트를 분할)
+    // ... 으로 사용
+    // 1. 배열 백업(기존 배열이 바뀌어도 유지)
+    // 2. 배열합치기
+    var 배열 = ['가', '나', '다']
+    console.log(...배열)
+
+    var 문자열 = "문자열도 배열"
+    console.log(...문자열)
+
+    var 배열2 = 배열
+
+    var 정수1 = 1
+    var 정수2 = 정수1
+
+    정수1 = 3
+    console.log(정수1)
+    console.log(정수2)
+
+    // 분해하고 다시 배열로 만들어주기
+    var 배열3 = [...배열]
+    배열[0] = '하'
+    console.log(배열)
+    console.log(배열2)
+    console.log(배열3)
+
+    var 배열4 = [...배열, ...배열3]
+    console.log(배열4)
+
+    var 오브젝트1 =
+    {
+      '키1':'값1',
+      '키2' :[1,2,3],
+      '키3':{},
+      '키4':[
+        {},
+        {},
+        {}
+      ]
+    }
+    //var 오브젝트2 = 오브젝트1
+    var 오브젝트2 = {...오브젝트1}
+    오브젝트1['키1'] = '대입'
+
+    console.log(오브젝트1)
+    console.log(오브젝트2)
+
+
+    var 오브젝트3 = {
+      '키4' : 1,
+      '키5' : 3
+    }
+
+    var 오브젝트5 = {...오브젝트1,...오브젝트3}
+    console.log(오브젝트5)
+
+
+    //function의 매개변수로 사용되면
+    var 배열5 = [1,2,3]
+    
+    function 함수1(숫자1, 숫자2, 숫자3){
+      console.log(숫자1)
+      console.log(숫자2)
+      console.log(숫자3)
+    }
+
+    함수1(...배열5)
+    함수1(배열5[0], 배열5[1], 배열5[2])
+
+
+
+    
+  </script>
+</body>
+</html>

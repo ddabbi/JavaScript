@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    //변수(저장공간)
+    var 공간1 = "값을 저장하는 공간";
+    let 공간2 = "for버그 해결";
+    const 공간3 = "한번 정하면 못바꿈";
+
+    // 저장된 값 변경
+    공간1 = "다시 대입"
+    // 저장된 값 사용
+    공간1
+
+    //함수(코드를 저장)
+    function 함수1(){
+      //저장할 코드
+    }
+    // 함수를 사용하려면
+    함수1()
+    // 사용할때마다 바꿔주고 싶은 코드(변수)가 있다 -> ()안에 변수를 만들어놓는다
+    function 함수2(변수1, 변수2){}
+    // 사용하는 곳에서 변수1과 변수2를 채워준다는 가정 하에 코드를 작성
+    함수2('사용할때','결정한다')
+    // 사용한 곳에 결과를 알려주고싶다
+    function 함수3(){
+      return 1
+    }
+    
+
+    // 덧셈이라는 함수를 숫자 2개를 받아서 더한값을 사용한 곳에 알려주는 함수
+    function 덧셈(숫자1, 숫자2){
+      var 결과 = 숫자1 + 숫자2;
+      return 결과
+    }
+
+    // 조건문
+    if(조건식){
+      //조건식이 true일때만 실행하는 공간
+    }else if(조건식2){
+      // 맨위 조건식이 false이며 조건식2가 true일때 
+    }else{
+      //조건식 둘다false일때
+    }
+    // 반복문
+    //
+    for(let i = 0; i<5; i++){
+      console.log(i)
+    }
+    
+    
+
+  </script>
+</body>
+</html>
