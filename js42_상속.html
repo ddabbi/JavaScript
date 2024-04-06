@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 상속: 물려주는거
+    //클래스가 갖고있느거: 함수와 변수 -> 함수와 변수를 물려준다
+    //
+    
+    class 부모{
+
+      
+      constructor(){
+        this.종족 = '사람'
+      }
+      요리하기(){
+        console.log('요리를 합니다')
+      }
+      두발걷기(){
+        console.log('두발로 걷습니다')
+      }
+    }
+
+    // 상속하는 이유: 일부ㄴ만 다르게 하려고(수정 또는 추가)
+    //
+    class 자식 extends 부모{
+      
+      constructor(이름, 나이){
+        super(이름,나이)
+      }
+      
+      용돈받기(){
+        console.log('용돈 주세요')
+      }
+    }
+    
+    
+
+  </script>
+</body>
+</html>

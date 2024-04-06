@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+    //constructor : 생성자(클래스 문법이 추가되기 전의 생성자)
+    //객체 생성기
+    // () : 사용하는 곳에서 정하겠다(매개변수, 인자)
+    function 객체생성기(name){
+      //this. : 키값으로 생성
+      this.이름 = name
+      this.종 = '사람'
+    }
+
+    // 프로토타입: 객체 생성기를 통해서 만드는 객체들이 공유하는 속성
+    객체생성기.prototype.인사 = function(){
+      console.log(`안녕하세요 ${this.이름} 입니다`)
+    }
+
+
+    var 사람1 = new 객체생성기('홍길동')      //{'이름':'홍길동', '종':'사람'}
+    console.log(사람1)
+
+    var 사람2 = new 객체생성기('김유신')   
+    console.log(사람2)
+     
+  </script>
+</body>
+</html>

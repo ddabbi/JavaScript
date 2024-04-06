@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="text-load">텍스트 파일 읽기</button>
+
+  <script>
+    // 함수앞에async를 적어주면 Promise처럼 사용이 가능(.then)
+    async function 함수명(){
+      console.log('함수사용')
+    }
+    // 프로퍼티변수명.then()... XX
+    함수명().then(function(){
+      console.log('함수 사용 이후')
+    })
+
+
+    async function 함수2(){
+      var sum = 1 + 1
+      return sum
+      return Promise.reject()   // 실패로 전달(기본은 성공)
+    }
+    // async의 결과갑승ㄹ 활용하고 싶으면
+    함수2().then(function(리턴값){
+      console.log(리턴값)
+    })
+    //promise 긴 작업을 대기, async긴 작업을 대기
+    //await: async 함수 내에서 긴 작업을 대기시키고 시픙ㄹ 때
+    document.getElementById('text-load').addEventListener('click',파일읽기)
+
+
+    async function 파일읽기(){
+      //비동기(주작업에 여얗ㅇ이 안가게 별도 작업)fetch
+      try{
+        let 결과값 = await fetch('텍스트파일.txt')
+        if(!결과값.ok){
+          throw new Error('')
+        }
+      
+      // await해당 작업이 끝날때까지 기다림(.then)
+      // fetch작업이 끝날때까지 기다림
+      
+      // 결과값을 텍스트로 모두 변경할때까지 기다린다. await (saync 안에서사용)
+        let 파일내용 =await 결과값.text()
+        console.log(파일내용)
+        document.getElementById('text').innerHTML = 파일내용
+      }catch(e){
+        console.log('앗 실패!')
+      }
+    }
+
+    //버튼 하나 만들고 버튼 누르면 이밎를 가져오는데 async - await사용해서 가져오기
+  </script>
+</body>
+</html>

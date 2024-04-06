@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // ? : 객체의 속성, 함수를 사용할 때 해당 값이 없으면 웹이 파운되지 않게 예외처리(방어처리)를 해줌
+    var obj = {}
+    console.log(obj.name?.lastName)    // 에러발생
+    console.log('안녕')               // 실행X
+
+    // ?? : 널병합연산자, 사용하려는 값이 비어있으면 오른쪽값으로 대체
+    let name;         // 에러 : 값을 안넣음(또는 아직 도착하지 않음)
+    let 결과값 = name ?? "대체값"
+    console.log(결과값) // 사용하려는 name이 정상적인 값인지 확신이 안들때
+  </script>
+</body>
+</html>
