@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // class : 변수와 함수의 묶음
+    class 클래스{
+      constructor(){
+        this.변수1 = 0          // this. : 클래스의 변수로 생성
+        this.변수2 = '값'
+      }
+
+      함수1(){
+        console.log('메서드 입니다.') // 클래스 안에 있는 함수 ==> 메서드
+      }
+    }
+
+    // 새로운 사람을 만날때 마다 new 사람()
+    class 사람{
+      constructor(이름, 나이){
+        this.이름 = 이름
+        this.나이 = 나이
+      }
+      인사하기(){
+        console.log(`안녕하세요 ${이름}입니다.`)
+      }
+    }
+
+    var 이순신 = new 사람('이순신', 33)
+    var 김유신 = new 사람('김유신', 23)
+    var 유관순 = new 사람('유관순', 19)
+
+    이순신.인사하기()
+    김유신.인사하기()
+    
+  </script>
+</body>
+</html>
